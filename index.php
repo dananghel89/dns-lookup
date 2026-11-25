@@ -99,7 +99,7 @@ require_once ABSPATH . 'include/app.php';
 				<div class="d-flex justify-content-between align-items-center text-white-50">
 					<ul class="nav">
 						<li class="nav-item">
-							<a class="nav-link text-white-50" href="javascript:void(0)">Home</a>
+							<a class="nav-link text-white-50" href="<?= APPURL ?>">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link text-white-50" href="javascript:void(0)">Feedback</a>

@@ -1,0 +1,23 @@
+# Base Apache config for DNS lookup
+
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+# No directory listings (e.g. /assets/)
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Block dotfiles and dot-folders (.git, .htaccess, ...), except .well-known
+	RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+	# Block direct access to PHP includes
+	RewriteRule ^include/ - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set X-Frame-Options "SAMEORIGIN"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
