@@ -1,0 +1,30 @@
+/* style css */
+
+.btn.focus, .btn:focus,
+.form-control:focus {
+	box-shadow: none !important;
+}
+
+.header .navbar {
+	background-color: #dae0e5;
+}
+
+.main {
+	min-height: 320px;
+}
+
+.form-dns .btn {
+	display: block;
+	float: left;
+	min-width: 50px;
+	margin: 0.25rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+@media (max-width: 576px) {
+	body, html {
+		width: 576px;
+		overflow-x: auto;
+	}
+}
