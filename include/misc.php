@@ -17,5 +17,10 @@ function test_print($item, $key) {
 		return;
 	}
 
-	echo sprintf( "%s: %s\n", $key, $item );
+	// DNS data (e.g. TXT records) is untrusted; escape before output.
+	echo sprintf(
+		"%s: %s\n",
+		htmlspecialchars( (string) $key, ENT_QUOTES, 'UTF-8' ),
+		htmlspecialchars( (string) $item, ENT_QUOTES, 'UTF-8' )
+	);
 }
